@@ -419,6 +419,26 @@ All data is synthetic. No real market APIs. No PII. No API keys.
 
 ---
 
-*Folder*: `mobile-engineering/` in `calvinlee999/claude_context_engineering`
-*Last updated*: 2026-06-08
-*Companion repo section*: See root `README.md` → Stage 8 Mobile Engineering
+*Last updated*: June 2026
+
+---
+
+## Cross-Repository Reference
+
+This repo is part of a five-repo ecosystem. Each repo owns a distinct concern — no duplication.
+
+| Repo | Device | Purpose | SSoT For |
+|------|--------|---------|----------|
+| [`dotfiles`](https://github.com/calvinlee999/dotfiles) | macOS (Mac Mini + MacBook Air) | Golden path, Docker stack, Kong Gateway, pf firewall, shell config | Technology versions, service definitions, naming conventions |
+| [`windows-dotfiles`](https://github.com/calvinlee999/windows-dotfiles) | Windows (RTX4090 + RTX Spark) | Windows PowerShell dev environment, Chocolatey, CIF runtime | Windows golden path, RTX4090/Spark dev toolchain |
+| [`claude_context_engineering`](https://github.com/calvinlee999/claude_context_engineering) | All devices | AI engineering — PE Template v3.0 (Pattern 0 SSOT), harness, review panel | Claude agent governance, Pattern 0 Universal Agent Loop, 12-Dimension CE Framework |
+| **[`mobile_engineering`](https://github.com/calvinlee999/mobile_engineering)** (this repo) | MacBook Air | Mobile front-end — iOS MVVM-C, Android (planned) | iOS/Android architecture, MobileDashboardKit, AI UX patterns |
+| [`Calvin_Infrastructure_Target`](https://github.com/calvinlee999/Calvin_Infrastructure_Target) | All devices | Target state architecture — 4-tier hardware, CIF framework, DR | Architecture blueprint, CIF framework, per-device plans, disaster recovery |
+
+### This Repo's Role
+
+`mobile_engineering` contains iOS (Swift/SwiftUI MVVM-C) and Android (Kotlin/Jetpack Compose, planned) front-end architecture. All mobile apps connect to the Mac Mini backend through Kong Gateway at `192.168.68.20:8000` (dev) or AWS Kong (prod).
+
+### AI Operating Model
+
+All AI agents use **Pattern 0** (Think → Plan → Execute → Observe → Compare → Learn) from `claude_context_engineering/claude_prompt_engineering_template_v_3_0.md` as the default operating model.
