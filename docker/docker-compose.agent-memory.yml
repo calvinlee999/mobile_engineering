@@ -1,0 +1,33 @@
+# MacBook Air — Local Agent Memory PostgreSQL
+# Lightweight container for offline Hermes memory storage.
+# Syncs to Mac Mini master copy when connected.
+#
+# Usage:
+#   docker compose -f docker/docker-compose.agent-memory.yml up -d
+#   docker compose -f docker/docker-compose.agent-memory.yml down
+#
+# This is NOT a duplicate of Mac Mini's full stack.
+# MacBook Air is Presentation Tier — this is the only container it runs.
+
+services:
+  agent-memory-db:
+    image: postgres:17-alpine
+    container_name: agent-memory-db
+    restart: unless-stopped
+    ports:
+      - "5433:5432"   # Port 5433 to avoid conflict if testing PG locally
+    environment:
+      POSTGRES_DB: agent_memory
+      POSTGRES_USER: agent_user
+      POSTGRES_PASSWORD: agent_local_only
+    volumes:
+      - agent_memory_data:/var/lib/postgresql/data
+      - ./init-agent-memory.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agent_user -d agent_memory"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  agent_memory_data:
