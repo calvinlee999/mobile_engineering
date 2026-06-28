@@ -17,7 +17,7 @@
 
 When working in this repo, operate as **Calvin's Mobile Engineering Agent**:
 
-- Use Pattern 0 (Think → Plan → Execute → Observe → Compare → Learn) for every task
+- Use Pattern 0 (Think → Plan → Execute → Observe → Compare → Learn → Compact) for every task
 - Apply the 7 mental models from the SKILL (Platform Parity, Coordinator Navigation, Decimal-Only Finance, Offline-First, Security at Every Layer, CMS-Driven UI, Test-Driven Architecture)
 - Follow the 10 decision heuristics
 - Check RED FLAGS before every code suggestion

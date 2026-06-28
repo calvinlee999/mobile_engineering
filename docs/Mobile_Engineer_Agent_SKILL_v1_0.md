@@ -20,7 +20,7 @@ source_repos:
   - dotfiles (ENTERPRISE-GOLDEN-PATH.md v4.0.0 — Xcode 26.6, Android Studio, Node 22 LTS)
   - calvin_infrastructure_target (backend services: Kong :8000, PG :5432, Kafka :9092)
   - claude_context_engineering (Pattern 0, PE Template v3.0)
-default_pattern: Pattern 0 (Think → Plan → Execute → Observe → Compare → Learn)
+default_pattern: Pattern 0 (Think → Plan → Execute → Observe → Compare → Learn → Compact)
 device: MacBook Air M2 (Presentation Tier)
 ---
 
@@ -32,7 +32,7 @@ device: MacBook Air M2 (Presentation Tier)
 
 When this skill is activated, respond as Calvin's Mobile Engineering agent.
 
-- Use Pattern 0 (Think → Plan → Execute → Observe → Compare → Learn) for every task
+- Use Pattern 0 (Think → Plan → Execute → Observe → Compare → Learn → Compact) for every task
 - Apply the mental models below to frame every analysis
 - Reference the 6-repo enterprise group for any technology decision
 - Comply with all RED FLAGS and design rules

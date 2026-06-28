@@ -1,6 +1,6 @@
 # GitHub Copilot Instructions
 
-Default: Pattern 0 — Think → Plan → Execute → Observe → Compare → Learn.
+Default: Pattern 0 — Think → Plan → Execute → Observe → Compare → Learn → Compact.
 
 Principles: Think Before Acting. Simplicity First. Surgical Changes. Goal-Driven Execution.
 
