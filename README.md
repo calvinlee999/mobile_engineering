@@ -1,11 +1,13 @@
-# Mobile Engineering — FinTech iOS Architecture Reference
+# Mobile Engineering — FinTech Mobile Architecture Reference
 
 > **Folder**: `mobile-engineering/`
-> **Platform**: iOS 18.5+ · Swift 6.3+ · Xcode 26.6+ (versions governed by `dotfiles/ENTERPRISE-GOLDEN-PATH.md`)
-> **Architecture**: MVVM-C + Headless CMS + Clean Architecture + TDD
+> **iOS**: iOS 18.5+ · Swift 6.3+ · Xcode 26.6+ · MVVM-C + Clean Architecture
+> **Android**: API 26+ · Kotlin · Jetpack Compose · MVVM + Clean Architecture (Google recommended)
+> **Versions**: Governed by `dotfiles/ENTERPRISE-GOLDEN-PATH.md`
 > **Assessment Method**: Self-Reinforcement Training — 3-Round Panel (target > 9.9 / 10)
 > **Final Panel Score**: 9.913 / 10 (v3.0) → **9.95 / 10 (v4.0 MVVM-C)**
-> **Author**: Calvin Lee | Updated: 2026-06-08
+> **Cross-platform patterns**: See `fintech_enterprise_architecture/README.md` Section 1 for side-by-side iOS/Android comparison
+> **Author**: Calvin Lee | Updated: 2026-06-28
 
 ---
 
