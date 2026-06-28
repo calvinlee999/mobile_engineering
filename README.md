@@ -1,7 +1,7 @@
 # Mobile Engineering — FinTech iOS Architecture Reference
 
 > **Folder**: `mobile-engineering/`
-> **Platform**: iOS 17+ · Swift 5.9+ · Xcode 15+
+> **Platform**: iOS 18.5+ · Swift 6.3+ · Xcode 26.6+ (versions governed by `dotfiles/ENTERPRISE-GOLDEN-PATH.md`)
 > **Architecture**: MVVM-C + Headless CMS + Clean Architecture + TDD
 > **Assessment Method**: Self-Reinforcement Training — 3-Round Panel (target > 9.9 / 10)
 > **Final Panel Score**: 9.913 / 10 (v3.0) → **9.95 / 10 (v4.0 MVVM-C)**
