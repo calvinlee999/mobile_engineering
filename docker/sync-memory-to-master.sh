@@ -7,6 +7,11 @@
 
 set -euo pipefail
 
+# libpq (psql/pg_isready) is keg-only via Homebrew — not on PATH by default.
+# Add it here rather than ~/.zshrc: this script also runs non-interactively
+# from Claude Code hooks, which don't source shell rc files.
+[ -d "/opt/homebrew/opt/libpq/bin" ] && export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
 LOCAL_HOST="localhost"
 LOCAL_PORT="5433"
 LOCAL_DB="agent_memory"
