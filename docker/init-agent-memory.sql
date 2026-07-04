@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS agent_memories (
     updated_at      TIMESTAMPTZ DEFAULT NOW()
 );
 
+ALTER TABLE agent_memories ADD CONSTRAINT uq_agent_memories_agent_id UNIQUE (agent_id);
 CREATE INDEX IF NOT EXISTS idx_agent_memories_agent_id ON agent_memories(agent_id);
 CREATE INDEX IF NOT EXISTS idx_agent_memories_type ON agent_memories(memory_type);
 CREATE INDEX IF NOT EXISTS idx_agent_memories_tags ON agent_memories USING GIN(tags);

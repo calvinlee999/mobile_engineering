@@ -23,6 +23,8 @@ mobile_engineering/
 ├── android/                          ← Android architecture (Kotlin/Compose)
 │   └── ARCHITECTURE.md                  MVVM + Clean Architecture, Hilt, Room, Coroutines
 │
+├── docker/                           ← Local agent-memory-db + sync (Postgres → SQLite fallback)
+│
 ├── .github/copilot-instructions.md   ← AI agent governance
 └── README.md                         ← This file
 ```
@@ -61,6 +63,16 @@ Both platforms follow the same layered pattern — only the framework implementa
 | **Offline-first** | Local DB as source of truth, network refresh |
 | **Test pyramid** | Unit 50% · Snapshot 20% · Integration 20% · UI 10% |
 | **TDD** | Red → Green → Refactor — no feature without a test |
+
+---
+
+## Local Services
+
+| Service | Port | Use |
+|---------|------|-----|
+| agent-memory-db | 5433 | Local Hermes agent memory (PostgreSQL) |
+
+3-tier fallback (Postgres auto-start → SQLite → reconcile) — see [`docker/sync-memories.sh`](docker/sync-memories.sh). Pattern write-up: [`Resilient_Local_Storage_Pattern_v1.0.md`](https://github.com/calvinlee999/claude_context_engineering/blob/main/harness-engineering/Resilient_Local_Storage_Pattern_v1.0.md).
 
 ---
 

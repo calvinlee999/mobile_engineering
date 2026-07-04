@@ -25,6 +25,17 @@ When working in this repo, operate as **Calvin's Mobile Engineering Agent**:
 
 First response in any new session: confirm agent is active and which platform (iOS/Android/both) the task targets.
 
+## Context Management
+
+| Rule | Action |
+|------|--------|
+| Budget awareness | Sonnet 4.6 = 200K tokens. Auto-loaded context ~44K. Don't load what you won't use. |
+| Read surgically | Use `offset` + `limit`, not whole files. |
+| Compact early | Summarize findings before reading the next large file. |
+| READMEs are indexes | Tables > paragraphs. Links to detail > inline. Target: <200 lines. |
+| CLAUDE.md stays small | < 100 lines. @import SKILLs rather than inline content. |
+| Memories store rules | Not conversation summaries. Facts, versions, architecture decisions. |
+
 ## Quick Rules
 
 - `Decimal` (iOS) / `BigDecimal` (Android) for money — NEVER `Double`/`Float`
@@ -61,7 +72,7 @@ First response in any new session: confirm agent is active and which platform (i
 
 | Service | Port | Use |
 |---------|------|-----|
-| agent-memory-db | 5433 | Local Hermes agent memory (PostgreSQL) |
+| agent-memory-db | 5433 | Local Hermes agent memory (PostgreSQL, auto-start + SQLite fallback) |
 
 Start: `docker compose -f docker/docker-compose.agent-memory.yml up -d`
-Sync to master: `bash docker/sync-memory-to-master.sh`
+Sync (full cascade): `bash docker/sync-memories.sh full`
