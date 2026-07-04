@@ -1,5 +1,7 @@
--- Agent Memory Schema — matches Mac Mini's agent_memories table
--- Local copy for offline operation. Syncs to Mac Mini master.
+-- Agent Memory Schema — local (MacBook Air) staging table for Claude Code
+-- memory files. Syncs to Mac Mini's claude_code_memory_sync table (a table
+-- dedicated to this purpose — NOT Hermes's own agent_memories log, which uses
+-- a different append-only schema and must not be overwritten by this sync).
 
 CREATE TABLE IF NOT EXISTS agent_memories (
     id              SERIAL PRIMARY KEY,

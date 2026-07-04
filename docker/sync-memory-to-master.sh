@@ -43,10 +43,13 @@ fi
 
 echo "→ Syncing $UNSYNCED memories to Mac Mini master..."
 
-# Export unsynced rows as INSERT statements
+# Export unsynced rows as INSERT statements.
+# Target: claude_code_memory_sync — a dedicated master-side table, kept separate
+# from Hermes's own agent_memories log (append-only facts keyed loosely by
+# agent_id) so this upsert-by-agent_id sync never collides with or overwrites it.
 PGPASSWORD="$LOCAL_PASS" psql -h "$LOCAL_HOST" -p "$LOCAL_PORT" -U "$LOCAL_USER" -d "$LOCAL_DB" -tAc \
     "SELECT format(
-        'INSERT INTO agent_memories (agent_id, memory_type, content, tags, source_device, created_at, updated_at) VALUES (%L, %L, %L, %L, %L, %L, %L) ON CONFLICT DO NOTHING;',
+        'INSERT INTO claude_code_memory_sync (agent_id, memory_type, content, tags, source_device, created_at, updated_at) VALUES (%L, %L, %L, %L, %L, %L, %L) ON CONFLICT (agent_id) DO UPDATE SET content = EXCLUDED.content, memory_type = EXCLUDED.memory_type, tags = EXCLUDED.tags, source_device = EXCLUDED.source_device, updated_at = EXCLUDED.updated_at;',
         agent_id, memory_type, content, tags::text, source_device, created_at, updated_at
     ) FROM agent_memories WHERE synced_to_master = FALSE;" | \
     PGPASSWORD="$MASTER_PASS" psql -h "$MASTER_HOST" -p "$MASTER_PORT" -U "$MASTER_USER" -d "$MASTER_DB"
@@ -59,7 +62,7 @@ echo "✓ Synced $UNSYNCED memories to Mac Mini master"
 
 # Pull count from master for verification
 MASTER_COUNT=$(PGPASSWORD="$MASTER_PASS" psql -h "$MASTER_HOST" -p "$MASTER_PORT" -U "$MASTER_USER" -d "$MASTER_DB" -tAc \
-    "SELECT count(*) FROM agent_memories;" 2>/dev/null || echo "?")
+    "SELECT count(*) FROM claude_code_memory_sync;" 2>/dev/null || echo "?")
 
 echo "  Local: $(PGPASSWORD="$LOCAL_PASS" psql -h "$LOCAL_HOST" -p "$LOCAL_PORT" -U "$LOCAL_USER" -d "$LOCAL_DB" -tAc 'SELECT count(*) FROM agent_memories;') total"
 echo "  Master: $MASTER_COUNT total"
