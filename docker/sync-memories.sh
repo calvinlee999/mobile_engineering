@@ -29,7 +29,7 @@ LOCAL_PASS="agent_local_only"
 COMPOSE_FILE="$SCRIPT_DIR/docker-compose.agent-memory.yml"
 PG_START_TIMEOUT=15   # seconds to wait for agent-memory-db to become healthy
 
-MASTER_HOST="192.168.68.20"
+MASTER_HOST="192.168.1.20"
 MASTER_PORT="5432"
 MASTER_DB="kafka_dev"
 MASTER_USER="kafka_user"

@@ -134,7 +134,7 @@ ktlint + detekt → assembleDebug → test (JaCoCo ≥80%) → verifyPaparazzi �
 
 | Environment | Base URL | Backend |
 |-------------|----------|---------|
-| Dev (Mac Mini) | `http://192.168.68.20:8000` | Kong → Spring Boot → PostgreSQL / Redis / Kafka |
+| Dev (Mac Mini) | `http://192.168.1.20:8000` | Kong → Spring Boot → PostgreSQL / Redis / Kafka |
 | Prod (AWS) | `https://api.{domain}.com` | Kong (ECS/EKS) → RDS / ElastiCache / MSK |
 
 API contract: OpenAPI 3.1 (shared with iOS + Web). Generated Kotlin client via `openapi-generator`.

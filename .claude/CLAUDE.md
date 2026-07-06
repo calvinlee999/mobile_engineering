@@ -58,7 +58,7 @@ First response in any new session: confirm agent is active and which platform (i
 | Cross-platform | Root `README.md` | Side-by-side comparison table |
 | Enterprise patterns | `fintech_enterprise_architecture/README.md` Section 1 | 14 mobile patterns |
 
-## Backend (Mac Mini 192.168.68.20)
+## Backend (Mac Mini 192.168.1.20)
 
 | Service | Port | Use |
 |---------|------|-----|

@@ -18,7 +18,7 @@ LOCAL_DB="agent_memory"
 LOCAL_USER="agent_user"
 LOCAL_PASS="agent_local_only"
 
-MASTER_HOST="192.168.68.20"
+MASTER_HOST="192.168.1.20"
 MASTER_PORT="5432"
 MASTER_DB="kafka_dev"
 MASTER_USER="kafka_user"

@@ -82,7 +82,7 @@ Both platforms connect to the same backend through Kong Gateway.
 
 | Environment | URL | Backend |
 |-------------|-----|---------|
-| **Dev** (Mac Mini) | `http://192.168.68.20:8000` | Kong → Spring Boot → PostgreSQL / Redis / Kafka |
+| **Dev** (Mac Mini) | `http://192.168.1.20:8000` | Kong → Spring Boot → PostgreSQL / Redis / Kafka |
 | **Prod** (AWS) | `https://api.{domain}.com` | Kong (ECS/EKS) → Spring Boot → RDS / ElastiCache / MSK |
 
 Same `kong.yml` routes, same Spring Boot code, same Kafka topics — dev mirrors prod.
