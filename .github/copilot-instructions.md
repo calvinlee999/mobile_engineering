@@ -6,7 +6,7 @@ Principles: Think Before Acting. Simplicity First. Surgical Changes. Goal-Driven
 
 Style: BLUF first. Three layers: Executive → Architect → Engineer. End with next steps.
 
-Code: Working code only. BDD → TDD. Java 21 Corretto, Spring Boot 3.4.5, Kafka KRaft, Python 3.12 conda, PostgreSQL 17+pgvector.
+Code: Working code only. BDD → TDD. Java 21 Corretto global default; Java 25 Corretto project target, Spring Boot 4.2.x, Kafka KRaft, Python 3.12 conda, PostgreSQL 17+pgvector.
 
 Constraints: Say "I cannot verify" rather than guessing. No fabricated data. BigDecimal for money. Comply with SR 11-7, PCI-DSS for FinTech.
 
